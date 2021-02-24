@@ -116,11 +116,10 @@ p {
   text-align: center;
   margin: 60px auto;
   display: block;
-
 }
 
 .btn-success:hover {
-  background-color: green
+  background-color: green;
   color: white;
   opacity: 0.8;
 }
