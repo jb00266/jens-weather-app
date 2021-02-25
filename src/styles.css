@@ -150,3 +150,11 @@ a {
   text-decoration: none;
   color: #fff;
 }
+
+.visit-github {
+  text-decoration: underline;
+}
+
+.visit-linkedin {
+  text-decoration: underline;
+}
