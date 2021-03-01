@@ -1,4 +1,4 @@
-import "./styles.css";
+//import "./styles.css";
 
 let now = new Date();
 
@@ -14,8 +14,6 @@ let hours = now.getHours();
 let minutes = now.getMinutes();
 
 minutes = addZero(minutes);
-console.log(minutes);
-
 hours = addZero(hours);
 
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -42,7 +40,8 @@ document.getElementById(
 
 function signUpFull() {
   let myCity = document.querySelector("#input-city");
-  header1.innerHTML = `The weather in ${myCity.value}`;
+  let myCityCAPS = capitalizeFirstLetter(myCity.value);
+  header1.innerHTML = `The weather in ${myCityCAPS}`;
   getTemperature(myCity.value);
 }
 
@@ -51,7 +50,7 @@ function capitalizeFirstLetter(string) {
 }
 
 let searchCity = document.querySelector("#search-button");
-searchCity.addEventListener("click", signUpFull, capitalizeFirstLetter);
+searchCity.addEventListener("click", signUpFull);
 
 function convertToFahrenheit(event) {
   event.preventDefault();
@@ -156,6 +155,5 @@ function getTemperatureCurrent(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-  console.log(url);
   axios.get(url).then(showCurrentWeather);
 }
