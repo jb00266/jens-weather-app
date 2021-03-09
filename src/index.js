@@ -58,10 +58,6 @@ function convertToFahrenheit(event) {
   let tempC = temperatureElement.innerHTML;
   let tempF = (tempC * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(tempF);
-  let temperatureElement2 = document.querySelector("#temperature2");
-  let temp2C = temperatureElement2.innerHTML;
-  let temp2F = (temp2C * 9) / 5 + 32;
-  temperatureElement2.innerHTML = Math.round(temp2F);
   fahrenheitLink.removeEventListener("click", convertToFahrenheit);
   celsiusLink.addEventListener("click", convertToCelsius);
   celsiusLink.style.opacity = "0.5";
@@ -121,10 +117,25 @@ let celsiusLink2 = document.querySelector("#celsius-link2");
 celsiusLink2.addEventListener("click", convertToCelsius2);
 
 function showWeather(response) {
-  let temperatureElement = document.querySelector("#temperature");
+  let temperatureElement = document.querySelector("#temperatureL");
+  let iconElement = document.querySelector("#iconL");
   let temperature = Math.round(response.data.main.temp);
+  let weathericon = response.data.weather[0].icon;
+  let weathertextelement = document.querySelector("#weathertextL");
+  let weatherdesc = response.data.weather[0].description;
+  let windspeed = response.data.wind.speed;
+  let windtext = document.querySelector("#windspeedL");
+  let humidity = response.data.main.humidity;
+  let humiditytext = document.querySelector("#humidityL");
   temperatureElement.innerHTML = temperature;
   fahrenheitLink.style.opacity = "0.5";
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${weathericon}@2x.png`
+  );
+  weathertextelement.innerHTML = weatherdesc;
+  windtext.innerHTML = windspeed + " m/s";
+  humiditytext.innerHTML = humidity + " %";
 }
 
 function userLocation() {
@@ -132,12 +143,29 @@ function userLocation() {
 }
 
 function showCurrentWeather(response) {
-  let temperature2Element = document.querySelector("#temperature2");
+  let temperature2Element = document.querySelector("#temperatureR");
+  let iconElement2 = document.querySelector("#iconR");
   let temperature2 = Math.round(response.data.main.temp);
   let userCity = response.data.name;
+  let weathericon2 = response.data.weather[0].icon;
+  let weathertextelement2 = document.querySelector("#weathertextR");
+  let weatherdesc2 = response.data.weather[0].description;
+  let windspeed2 = response.data.wind.speed;
+  let windtext2 = document.querySelector("#windspeedR");
+  let humidity2 = response.data.main.humidity;
+  let humiditytext2 = document.querySelector("#humidityR");
+  console.log(weatherdesc2);
+  console.log(response.data.weather[0].description);
   temperature2Element.innerHTML = temperature2;
   header2.innerHTML = `${userCity}`;
   fahrenheitLink.style.opacity = "0.5";
+  iconElement2.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${weathericon2}@2x.png`
+  );
+  weathertextelement2.innerHTML = weatherdesc2;
+  windtext2.innerHTML = windspeed2 + " m/s";
+  humiditytext2.innerHTML = humidity2 + " %";
 }
 
 let searchLocation = document.querySelector("#location-button");
@@ -156,4 +184,5 @@ function getTemperatureCurrent(position) {
   let lon = position.coords.longitude;
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(url).then(showCurrentWeather);
+  console.log(url);
 }
