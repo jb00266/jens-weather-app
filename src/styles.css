@@ -162,3 +162,10 @@ a {
 .visit-linkedin {
   text-decoration: underline;
 }
+
+.forecast-row {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
