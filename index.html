@@ -13,10 +13,9 @@
     <link rel="stylesheet" href="src/styles.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
-
   <body>
     <form class="widget" id="search-city">
-      <h1>Where would you like to go today?</h1>
+      <h1 id="maintitle">Jen's weather app</h1>
     </br>
       <form>
         <input
@@ -25,86 +24,41 @@
           class="search-your-city"
         />&nbsp<button type="button" input="search" id="search-button" class="btn btn-outline-light">
           Search
-        </button>
-        <p>
-        <h2 id="current"></h2>
-        </P>
-        <button type="button" input="search" id="location-button" class="btn btn-success">Weather at your location</button>
-      </form>
+        </button><button type="button" input="search" id="location-button" class="btn btn-success">current location</button>
+      </form>      
 
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="card" style="height: 28em;">
-              <div class="card-body" style="border-collapse:collapse;">
-                <p class="card-text"></p>
-                <div class="search-weather" style="margin-top: 10px;">
-                  <div class="card-header" id="header1">
-                    Your Location
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""  id="iconL"  class="icon" />
-                      <class  id="weathertextL">clear</class>
-                    </li>
-                    <li class="list-group-item">
-                      <i class="fas fa-thermometer-half"></i>
-                      <span class ="temperature" class id ="temperatureL"></span>
-                          <span class="units" id="units">
-                              <a href="#" id="celsius-link" style="color:white" style="text-decoration:none">°C</a> |
-                              <a href="#" id="fahrenheit-link" style="color:white" style="text-decoration:none">°F</a>
-                    </li>
-                    <li class="list-group-item">
-                      <i class="fas fa-wind"></i>
-                    <span class ="windspeed" id="windspeedL">m/s</span> 
-                    </li>
-                    <li class="list-group-item">
-                      <i class="fas fa-tint"></i>
-                      <span class ="humidity" id="humidityL">%</span> 
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card" style="height: 28em;">
-              <div class="current-weather" style="margin-top: 30px;">
-                <div class="card-header" id="header2">
-                  Your location
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" id="iconR"  class="icon"/>
-                    <class  id="weathertextR">clear</class>
-                  </li>
-                  <li class="list-group-item">
-                    <i class="fas fa-thermometer-half"></i>
-                    <span class ="temperature2" class id ="temperatureR"></span>
-                          <span class="units" id="units">
-                              <a href="#" id="celsius-link2" style="color:white" style="text-decoration:none">°C</a> |
-                              <a href="#" id="fahrenheit-link2" style="color:white" style="text-decoration:none">°F</a>
-                  </li>
-                  <li class="list-group-item">
-                    <i class="fas fa-wind"></i>
-                    <span class ="windspeed2" id="windspeedR">m/s</span> 
-                  </li>
-                  <li class="list-group-item">
-                    <i class="fas fa-tint"></i>
-                    <span class ="humidity2" id="humidityR">%</span> 
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="forecast-row" id="forecastweather">
-          </div>
-        </div>
+<div class="container">
+  <div class="row" id="weather-section">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4" style="background-color: rgba(255, 255, 255, 0.103)" style="border-radius: 15%">
+      <h2 id="current"></h2>
+      <div class="weathericon">
+        <img src="" alt=""  id="icon"  class="icon" />
       </div>
-    </form>
+      <div class ="temperature">
+        <i class="fas fa-thermometer-half"></i>
+        <span class ="temperature" class id ="temperature"></span>
+        <span class="units" id="units">
+          <a href="#" id="celsius-link" style="color:white" style="text-decoration:none">°C</a> |
+          <a href="#" id="fahrenheit-link" style="color:white" style="text-decoration:none">°F</a>
+        </span>
+      </div>
+      <div class ="windspeed">
+        <i class="fas fa-wind"></i>
+        <span class ="windspeed" id="windspeed">m/s</span> 
+      </div>
+      <div class = "humidity">
+        <i class="fas fa-tint"></i>
+        <span class ="humidity" id="humidity">%</span> 
+      </div>
+    </div>
+    <div class="col-lg-4"  id="forecastweather" style="background-color: rgba(255, 255, 255, 0.103)" style="border-radius: 15px">
+      
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
   </body>
-  <p>
       <p class ="footer">
         <a 
         href="https://github.com/jb00266/jens-weather-app"
