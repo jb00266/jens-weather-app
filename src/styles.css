@@ -28,15 +28,15 @@ h2 {
 }
 
 .temperature {
-  font-size: 40px;
+  font-size: 20px;
 }
 
 .windspeed {
-  font-size: 40px;
+  font-size: 20px;
 }
 
 .humidity {
-  font-size: 40px;
+  font-size: 20px;
 }
 
 .date-time {
@@ -62,15 +62,15 @@ h2 {
 }
 
 .fas.fa-thermometer-half {
-  font-size: 50px;
+  font-size: 20px;
 }
 
 .fas.fa-wind {
-  font-size: 50px;
+  font-size: 20px;
 }
 
-fas.fa-tint {
-  font-size: 50px;
+.fa-tint {
+  font-size: 20px;
 }
 
 .forecast-day {
@@ -104,7 +104,7 @@ fas.fa-tint {
 .btn-success {
   margin-top: -5px;
   height: 36px;
-  width: 120px;
+  width: 130px;
   margin-left: 10px;
   font-size: 12px;
   border-radius: 15px;
@@ -133,7 +133,7 @@ fas.fa-tint {
 }
 
 .footer {
-  font-size: 25px;
+  font-size: 15px;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -154,9 +154,20 @@ a {
 .forecast-hour {
   list-style-type: none;
   opacity: 0.8;
+  margin-top: 20px;
 }
 
 .forecast-temp {
   list-style-type: none;
   font-size: 25px;
+}
+
+#celsius-link{
+  cursor: auto;
+  color: white;
+}
+
+#fahrenheit-link{
+  cursor: auto;
+  color: white;
 }
